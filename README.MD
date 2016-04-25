@@ -35,11 +35,15 @@ A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] is a [`JsonHandler`][JsonHa
 
 - A JSON array is represented as a tag with name `array`.
 - A JSON object is represented as a tag with name `object`.
-- A JSON object entry is represented as a tag with name `entry`. The name of the JSON object entry is represented as an attribute with name `name`.
+- A JSON object entry is represented as a tag with name `entry`.
+- The name of a JSON object entry is represented as an attribute of the `entry` tag with name `name`.
 - A JSON null is represented as a tag with name `null`.
-- A JSON boolean is represented as a tag with name `boolean`. The value of the JSON boolean represented as an attribute with name `value`.
-- A JSON number is represented as a tag with name `number`. The value of the JSON boolean represented as an attribute with name `value`.
-- A JSON string is represented as a tag with name `string`. The value of the JSON boolean represented as an attribute with name `value`.
+- A JSON boolean is represented as a tag with name `boolean`.
+- The value of the JSON boolean represented as an attribute of the `boolean` tag with name `value`.
+- A JSON number is represented as a tag with name `number`.
+- The value of the JSON boolean represented as an attribute of the `number` tag with name `value`.
+- A JSON string is represented as a tag with name `string`.
+- The value of the JSON boolean represented as an attribute of the `string` tag with name `value`.
 
 ```java
 // a JsonDocument
