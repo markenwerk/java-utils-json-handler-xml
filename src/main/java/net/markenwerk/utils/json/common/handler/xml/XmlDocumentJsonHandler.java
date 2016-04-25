@@ -42,17 +42,19 @@ import net.markenwerk.utils.json.handler.JsonHandlingException;
  * <ul>
  * <li>A JSON array is represented as a tag with name {@code array}.</li>
  * <li>A JSON object is represented as a tag with name {@code object}.</li>
- * <li>A JSON object entry is represented as a tag with name {@code entry}. The
- * name of the JSON object entry is represented as an attribute with name
- * {@code name}.</li>
+ * <li>A JSON object entry is represented as a tag with name {@code entry}.</li>
+ * <li>The name of a JSON object entry is represented as an attribute of the
+ * {@code entry} tag with name {@code name}.</li>
  * <li>A JSON null is represented as a tag with name {@code null}.</li>
- * <li>A JSON boolean is represented as a tag with name {@code boolean}. The
- * value of the JSON boolean represented as an attribute with name {@code value}
- * .</li>
- * <li>A JSON number is represented as a tag with name {@code number}. The value
- * of the JSON number represented as an attribute with name {@code value}.</li>
- * <li>A JSON string is represented as a tag with name {@code string}. The value
- * of the JSON string represented as an attribute with name {@code value} .</li>
+ * <li>A JSON boolean is represented as a tag with name {@code boolean}.</li>
+ * <li>The value of the JSON boolean represented as an attribute of the
+ * {@code boolean} tag with name {@code value} .</li>
+ * <li>A JSON number is represented as a tag with name {@code number}.</li>
+ * <li>The value of the JSON number represented as an attribute of the
+ * {@code number} tag with name {@code value}.</li>
+ * <li>A JSON string is represented as a tag with name {@code string}.</li>
+ * <li>The value of the JSON string represented as an attribute of the
+ * {@code string} tag with name {@code value} .</li>
  * </ul>
  * 
  * <p>
