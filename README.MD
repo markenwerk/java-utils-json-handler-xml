@@ -79,9 +79,9 @@ The returned XML [`Document`][Document] for the [`example.json`](https://gist.gi
 </object>
 ```
 
-[XmlDocumentJsonHandler]: http://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/handler/xml/XmlDocumentJsonHandler.html
+[XmlDocumentJsonHandler]: https://markenwerk.github.io/java-utils-json-handler-xml/index.html?net/markenwerk/utils/json/handler/xml/XmlDocumentJsonHandler.html
 
-[JsonHandler]: http://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
+[JsonHandler]: https://markenwerk.github.io/java-utils-json-handler/index.html?net/markenwerk/utils/json/handler/JsonHandler.html
 
 [Document]: https://docs.oracle.com/javase/8/docs/api/index.html?org/w3c/dom/Document.html
 
