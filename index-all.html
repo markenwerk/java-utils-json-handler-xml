@@ -296,7 +296,9 @@
 <div class="block">A <a href="net/markenwerk/utils/json/handler/NullJsonHandler.html" title="class in net.markenwerk.utils.json.handler"><code>NullJsonHandler</code></a> is an <a href="net/markenwerk/utils/json/handler/IdleJsonHandler.html" title="class in net.markenwerk.utils.json.handler"><code>IdleJsonHandler</code></a> that does nothing.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/markenwerk/utils/json/handler/NullJsonHandler.html#NullJsonHandler--">NullJsonHandler()</a></span> - Constructor for class net.markenwerk.utils.json.handler.<a href="net/markenwerk/utils/json/handler/NullJsonHandler.html" title="class in net.markenwerk.utils.json.handler">NullJsonHandler</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Creates a new <a href="net/markenwerk/utils/json/handler/NullJsonHandler.html" title="class in net.markenwerk.utils.json.handler"><code>NullJsonHandler</code></a></div>
+</dd>
 </dl>
 <a name="I:O">
 <!--   -->
@@ -449,7 +451,20 @@ the order they are declared.</div>
  
  A JSON array is represented as a tag with name <code>array</code>.
  A JSON object is represented as a tag with name <code>object</code>.
- A JSON object entry is represented as a tag with name <code>entry</code>.</div>
+ A JSON object entry is represented as a tag with name <code>entry</code>.
+ The name of a JSON object entry is represented as an attribute of the
+ <code>entry</code> tag with name <code>name</code>.
+ A JSON null is represented as a tag with name <code>null</code>.
+ A JSON boolean is represented as a tag with name <code>boolean</code>.
+ The value of the JSON boolean represented as an attribute of the
+ <code>boolean</code> tag with name <code>value</code> .
+ A JSON number is represented as a tag with name <code>number</code>.
+ The value of the JSON number represented as an attribute of the
+ <code>number</code> tag with name <code>value</code>.
+ A JSON string is represented as a tag with name <code>string</code>.
+ The value of the JSON string represented as an attribute of the
+ <code>string</code> tag with name <code>value</code> .
+ </div>
 </dd>
 <dt><span class="memberNameLink"><a href="net/markenwerk/utils/json/common/handler/xml/XmlDocumentJsonHandler.html#XmlDocumentJsonHandler--">XmlDocumentJsonHandler()</a></span> - Constructor for class net.markenwerk.utils.json.common.handler.xml.<a href="net/markenwerk/utils/json/common/handler/xml/XmlDocumentJsonHandler.html" title="class in net.markenwerk.utils.json.common.handler.xml">XmlDocumentJsonHandler</a></dt>
 <dd>
