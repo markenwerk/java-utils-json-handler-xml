@@ -29,6 +29,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
+import net.markenwerk.utils.json.common.InvalidJsonNameException;
 import net.markenwerk.utils.json.common.InvalidJsonValueException;
 import net.markenwerk.utils.json.handler.IdleJsonHandler;
 import net.markenwerk.utils.json.handler.JsonHandler;
@@ -191,7 +192,8 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onName(String name) throws JsonHandlingException {
+	public void onName(String name) throws InvalidJsonNameException, JsonHandlingException {
+		checkName(name);
 		Element element = document.createElement("entry");
 		element.setAttribute("name", name);
 		this.node.appendChild(element);
@@ -224,7 +226,7 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 
 	@Override
 	public void onDouble(double value) throws InvalidJsonValueException, JsonHandlingException {
-		checkDoubleValue(value);
+		checkDouble(value);
 		Element element = document.createElement("number");
 		element.setAttribute("value", Double.toString(value));
 		appendChild(element);
@@ -232,7 +234,7 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 
 	@Override
 	public void onString(String value) throws InvalidJsonValueException, JsonHandlingException {
-		checkStringValue(value);
+		checkString(value);
 		Element element = document.createElement("string");
 		element.setAttribute("value", value);
 		appendChild(element);
