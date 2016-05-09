@@ -7,7 +7,7 @@ import org.xmlunit.builder.DiffBuilder;
 import org.xmlunit.builder.Input;
 import org.xmlunit.diff.Diff;
 
-import net.markenwerk.utils.json.common.InvalidJsonValueException;
+import net.markenwerk.utils.json.common.JsonValueException;
 import net.markenwerk.utils.json.handler.JsonHandler;
 
 @SuppressWarnings("javadoc")
@@ -110,7 +110,7 @@ public class XmlDocumentJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onDouble_notANumber() {
 
 		JsonHandler<Document> handler = new XmlDocumentJsonHandler();
@@ -121,7 +121,7 @@ public class XmlDocumentJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onDouble_infinite() {
 
 		JsonHandler<Document> handler = new XmlDocumentJsonHandler();
@@ -177,7 +177,7 @@ public class XmlDocumentJsonHandlerTests {
 
 	}
 
-	@Test(expected = InvalidJsonValueException.class)
+	@Test(expected = JsonValueException.class)
 	public void onString_null() {
 
 		JsonHandler<Document> handler = new XmlDocumentJsonHandler();

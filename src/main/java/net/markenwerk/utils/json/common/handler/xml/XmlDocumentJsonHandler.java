@@ -29,9 +29,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 
-import net.markenwerk.utils.json.common.FailedJsonOperationException;
-import net.markenwerk.utils.json.common.InvalidJsonNameException;
-import net.markenwerk.utils.json.common.InvalidJsonValueException;
+import net.markenwerk.utils.json.common.JsonException;
+import net.markenwerk.utils.json.common.JsonIndexException;
+import net.markenwerk.utils.json.common.JsonValueException;
 import net.markenwerk.utils.json.handler.IdleJsonHandler;
 import net.markenwerk.utils.json.handler.JsonHandler;
 
@@ -154,22 +154,22 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onDocumentBegin() throws FailedJsonOperationException {
+	public void onDocumentBegin() throws JsonException {
 	}
 
 	@Override
-	public void onDocumentEnd() throws FailedJsonOperationException {
+	public void onDocumentEnd() throws JsonException {
 	}
 
 	@Override
-	public void onArrayBegin() throws FailedJsonOperationException {
+	public void onArrayBegin() throws JsonException {
 		Element element = document.createElement("array");
 		this.node.appendChild(element);
 		this.node = element;
 	}
 
 	@Override
-	public void onArrayEnd() throws FailedJsonOperationException {
+	public void onArrayEnd() throws JsonException {
 		node = node.getParentNode();
 		if (node.getNodeName().equals("entry")) {
 			node = node.getParentNode();
@@ -177,14 +177,14 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onObjectBegin() throws FailedJsonOperationException {
+	public void onObjectBegin() throws JsonException {
 		Element element = document.createElement("object");
 		this.node.appendChild(element);
 		this.node = element;
 	}
 
 	@Override
-	public void onObjectEnd() throws FailedJsonOperationException {
+	public void onObjectEnd() throws JsonException {
 		node = node.getParentNode();
 		if (node.getNodeName().equals("entry")) {
 			node = node.getParentNode();
@@ -192,7 +192,7 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onName(String name) throws InvalidJsonNameException, FailedJsonOperationException {
+	public void onName(String name) throws JsonIndexException, JsonException {
 		checkName(name);
 		Element element = document.createElement("entry");
 		element.setAttribute("name", name);
@@ -201,31 +201,31 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onNext() throws FailedJsonOperationException {
+	public void onNext() throws JsonException {
 	}
 
 	@Override
-	public void onNull() throws FailedJsonOperationException {
+	public void onNull() throws JsonException {
 		Element element = document.createElement("null");
 		appendChild(element);
 	}
 
 	@Override
-	public void onBoolean(boolean value) throws FailedJsonOperationException {
+	public void onBoolean(boolean value) throws JsonException {
 		Element element = document.createElement("boolean");
 		element.setAttribute("value", value ? "true" : "false");
 		appendChild(element);
 	}
 
 	@Override
-	public void onLong(long value) throws FailedJsonOperationException {
+	public void onLong(long value) throws JsonException {
 		Element element = document.createElement("number");
 		element.setAttribute("value", Long.toString(value));
 		appendChild(element);
 	}
 
 	@Override
-	public void onDouble(double value) throws InvalidJsonValueException, FailedJsonOperationException {
+	public void onDouble(double value) throws JsonValueException, JsonException {
 		checkDouble(value);
 		Element element = document.createElement("number");
 		element.setAttribute("value", Double.toString(value));
@@ -233,7 +233,7 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public void onString(String value) throws InvalidJsonValueException, FailedJsonOperationException {
+	public void onString(String value) throws JsonValueException, JsonException {
 		checkString(value);
 		Element element = document.createElement("string");
 		element.setAttribute("value", value);
@@ -248,7 +248,7 @@ public final class XmlDocumentJsonHandler extends IdleJsonHandler<Document> {
 	}
 
 	@Override
-	public Document getResult() throws FailedJsonOperationException {
+	public Document getResult() throws JsonException {
 		return document;
 	}
 
