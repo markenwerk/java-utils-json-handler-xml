@@ -31,7 +31,7 @@ This library is hosted in the [Maven Central Repository](https://maven-badges.he
 
 ### XML document handler
 
-A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] is a [`JsonHandler`][JsonHandler] that creates a XML [`Document`][Document] that represents the described JSON document using the following rules:
+A [`XmlDocumentJsonHandler`][XmlDocumentJsonHandler] is a [`JsonHandler`][JsonHandler] that creates a XML [`Document`][Document], that represents the described JSON document, using the following rules:
 
 - A JSON array is represented as a tag with name `array`.
 - A JSON object is represented as a tag with name `object`.
@@ -53,7 +53,7 @@ JsonDocument document = ...
 Document xmlDocument = document.handle(new XmlDocumentJsonHandler());
 ```
 
-The returned XML [`Document`][Document] for the [`example.json`](https://gist.github.com/toKrause/208992e7625f0b8a9d04e7283f09fc26)has the following content:
+The returned XML [`Document`][Document] for the [`example.json`](https://gist.github.com/toKrause/208992e7625f0b8a9d04e7283f09fc26) has the following content:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
